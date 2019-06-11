@@ -16,6 +16,7 @@ public class Play {
     private static int currentPlayer = 0;
     private static boolean winCondition = false;
     private static Tile[][] copy;
+    static TileRenderer renderer = new TileRenderer();
 
     private static void resetGame() {
         winCondition = false;
@@ -26,10 +27,16 @@ public class Play {
         currentPlayer = (currentPlayer + 1) % 2;
     }
 
-    private static Tile getPlayerColor() {
+    private static Tile getPlayerColor(boolean placeholder) {
         if (currentPlayer == 0) {
+            if (placeholder) {
+                return TileSet.BLACKMOVE;
+            }
             return TileSet.BLACK;
         } else {
+            if (placeholder) {
+                return TileSet.WHITEMOVE;
+            }
             return TileSet.WHITE;
         }
     }
@@ -42,9 +49,16 @@ public class Play {
         }
     }
 
+    private static boolean notOccupied(Tile[][] cop, int[] player) {
+        if (copy[player[0]][player[1]] != TileSet.WHITE && copy[player[0]][player[1]] != TileSet.BLACK) {
+            return true;
+        }
+        return false;
+    }
+
 
     public static void playGame(InputSource input, TileRenderer renderer, Tile[][] board) {
-        board[0][0] = getPlayerColor();
+        board[10][10] = getPlayerColor(true);
         int[] player;
         loop : while (true) {
             if (currentPlayer % 2 == 0) {
@@ -67,12 +81,13 @@ public class Play {
                     move (1, 0, board);
                     break;
                 case 'J':
-                    if (copy[player[0]][player[1]] != TileSet.WHITE && copy[player[0]][player[1]] != TileSet.BLACK) {
-                        copy[player[0]][player[1]] = board[player[0]][player[1]];
+                    if (notOccupied(copy, player)) {
+                        copy[player[0]][player[1]] = getPlayerColor(false);
+                        board[player[0]][player[1]] = copy[player[0]][player[1]];
                         if (currentPlayer % 2 == 0) {
-                            player1 = new int[] {0, 0};
+                            player1 = new int[] {10, 10};
                         } else {
-                            player2 = new int[] {0, 0};
+                            player2 = new int[] {10, 10};
                         }
                         break loop;
                     }
@@ -89,7 +104,7 @@ public class Play {
         int x = player[0];
         int y = player[1];
         try {
-            board[x + xMove][y + yMove] = getPlayerColor();
+            board[x + xMove][y + yMove] = getPlayerColor(true);
             board[x][y] = copy[x][y];
             if (currentPlayer % 2 == 0) {
                 player1 = new int[] {x + xMove, y + yMove};
@@ -109,7 +124,7 @@ public class Play {
         return false;
     }
 
-    public static boolean colorScreen(InputSource input, GameScreen game) {
+    /*public static boolean colorScreen(InputSource input, GameScreen game) {
         game.chooseColorScreen();
         while (input.possibleNextInput()) {
             char pieceChoice = input.getNextKey();
@@ -126,15 +141,15 @@ public class Play {
             }
         }
         return false;
-    }
+    }*/
 
     public static void setScreens(InputSource input, GameScreen game) {
         loop : while (input.possibleNextInput()) {
                 char start = input.getNextKey();
                 switch (start) {
                     case 'P' : //continue
-                        boolean startGame = colorScreen(input, game);
-                        if (startGame) {
+                        //boolean startGame = colorScreen(input, game);
+                        if (true) {
                             break loop;
                         }
                         game.startScreen();
@@ -155,7 +170,6 @@ public class Play {
     public static void main(String[] args) {
 
         GameScreen game = new GameScreen();
-        TileRenderer renderer = new TileRenderer();
         InputSource input = new KeyboardInputSource();
         game.initialize();
         game.startScreen();
@@ -168,16 +182,18 @@ public class Play {
 
         renderer.initialize(31, 21);
         renderer.renderFrame(board);
-        //gameplay from now on i think
-        player1 = new int[] {0, 0};
-        player2 = new int[] {0, 0};
-        currentPlayer = 0;
+        //starting locations for placing pieces
+        player1 = new int[] {10, 10};
+        player2 = new int[] {10, 10};
+        currentPlayer = 0; //set first player to black
+
         while (!winCondition) {
-            playGame(input, renderer, board);
             GameSetup.displaySetup();
+            playGame(input, renderer, board);
+            if (CheckBoard.winCheck(getPlayerColor(false), copy)) {
+                System.out.println("Game Over");
+            }
             changePlayers();
         }
-
-
     }
 }

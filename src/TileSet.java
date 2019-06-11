@@ -17,9 +17,7 @@ public class TileSet {
 
     public static final Tile WHITE = new Tile("/boardimages/white.png");
     public static final Tile BLACK = new Tile("/boardimages/black.png");
-/*
-    public static final Tile WHITEMOVE;
-    public static final Tile BLACKMOVE;
+    public static final Tile WHITEMOVE = new Tile("/boardimages/whitemove.png");
+    public static final Tile BLACKMOVE = new Tile("/boardimages/blackmove.png");
 
-    */
 }

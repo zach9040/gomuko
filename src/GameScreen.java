@@ -35,20 +35,14 @@ public class GameScreen {
     public void helpScreen() {
         StdDraw.clear(Color.WHITE);
 
-        StdDraw.text(midWidth, height - 2, "Gomoku is a game with help.");
+        StdDraw.text(midWidth, height - 2, "Gomoku is a game that utilizes the Go Board.");
+        StdDraw.text(midWidth, height - 4, "The aim of the game is to get five in a row.");
+
+        StdDraw.text(midWidth, midHeight, "Good Luck!");
         StdDraw.show();
         //explain how game works
     }
 
-    public void chooseColorScreen() {
-        StdDraw.clear(Color.WHITE);
-
-        StdDraw.text(midWidth, midHeight + 1, "Black (B)");
-        StdDraw.text(midWidth, midHeight - 1, "White (W)");
-
-        StdDraw.show();
-        //choose black or white tile
-    }
 
     public void creditScreen() {
         StdDraw.clear(Color.WHITE);

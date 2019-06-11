@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class GameSetup {
     private static final int WIDTH = 62;
     private static final int HEIGHT = 42;
@@ -24,7 +26,7 @@ public class GameSetup {
             goBoard[20][j] = TileSet.RBOARD;
         } // side
         //corners
-        goBoard[0][0] = TileSet.BLACK;
+        goBoard[0][0] = TileSet.BLCORNER;
         goBoard[0][20] = TileSet.TLCORNER;
         goBoard[20][20] = TileSet.TRCORNER;
         goBoard[20][0] = TileSet.BRCORNER;
@@ -32,7 +34,11 @@ public class GameSetup {
 
 
     public static void displaySetup() {
-
+        StdDraw.setPenColor(Color.BLACK);
+        StdDraw.text(WIDTH - 10, HEIGHT - 10, "Player 1");
+        StdDraw.setPenColor(Color.WHITE);
+        StdDraw.text(WIDTH - 10, HEIGHT - 30, "Player 2");
+        StdDraw.show();
     }
 
     public static void updateDisplay() {

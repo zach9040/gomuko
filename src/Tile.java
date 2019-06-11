@@ -1,13 +1,17 @@
 import java.util.Arrays;
 
 public class Tile {
-    private final String image;
+    private String image;
     private final Boolean hasPiece = false;
-    private final int piece = 0; // 0 is none, 1 is black, 2 is white
+    private String change;
+    private int piece; // 0 is none, 1 is black, 2 is white
 
     //description of tile, as well as image path
     public Tile(String im) {
-        image = im; // image goes into image files to pull
+        image = im;
+        piece = 0;
+        change = null;
+        // image goes into image files to pull
     }
 
     //draws image at these coordinates
@@ -28,13 +32,14 @@ public class Tile {
         return hasPiece;
     }
 
-    public void addPiece(int x) {
-        if (x == 1) {
-            //add black piece to tile
-        } else if (x == 2) {
-            //add white piece to tile
-        } else {
-            System.out.println("not valid piece");
+    public void changePiece(int piece) {
+        if (piece == 0) {
+            change = image;
+            image = TileSet.BLACK.image;
+            System.out.println(change);
+        } else if (piece == 1){
+            change = image;
+            image = TileSet.WHITE.image;
         }
     }
 

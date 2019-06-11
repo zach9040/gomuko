@@ -192,6 +192,7 @@ public class Play {
             playGame(input, renderer, board);
             if (CheckBoard.winCheck(getPlayerColor(false), copy)) {
                 System.out.println("Game Over");
+                game.winnerScreen(getPlayerColor(false));
             }
             changePlayers();
         }

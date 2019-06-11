@@ -36,6 +36,28 @@ public class CheckBoard { // used to contain wincheck
     }
 
     public static boolean diagonalCheck(Tile Player, Tile[][] board) {
+        //pos orientation
+        for (int i = 0; i < board.length - 4; i += 1) {
+            for (int j = 0; j < board[0].length - 4; j += 1) {
+                if (board[i][j] == Player) {
+                    if (board[i + 1][j + 1] == Player && board[i + 2][j + 2] == Player
+                            && board[i + 3][j + 3] == Player && board[i + 4][j + 4] == Player) {
+                        return true;
+                    }
+                }
+            }
+        }
+        //neg orientation
+        for (int i = 0; i < board.length - 4; i += 1) {
+            for (int j = 4; j < board.length; j += 1) {
+                if (board[i][j] == Player) {
+                    if (board[i + 1][j - 1] == Player && board[i + 2][j - 2] == Player
+                            && board[i + 3][j - 3] == Player && board[i + 4][j - 4] == Player) {
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 }

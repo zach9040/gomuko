@@ -11,11 +11,11 @@ public class GameScreen {
     public GameScreen() { }
 
     public void initialize() {
-        StdDraw.setCanvasSize(this.width * 16, this.height * 16);
+        StdDraw.setCanvasSize(width * 16, height * 16);
         Font font = new Font("Times New Roman", Font.BOLD, 30);
         StdDraw.setFont(font);
-        StdDraw.setXscale(0, this.width);
-        StdDraw.setYscale(0, this.height);
+        StdDraw.setXscale(0, width);
+        StdDraw.setYscale(0, height);
         StdDraw.clear(Color.BLACK);
         StdDraw.enableDoubleBuffering();
         StdDraw.setPenColor(Color.BLACK);
@@ -54,5 +54,21 @@ public class GameScreen {
 
     public void optionScreen() {
         //choose whether 1 v 1 or 1 v computer (later)
+    }
+
+    public void winnerScreen(Tile winner) {
+        StdDraw.clear(Color.WHITE);
+        System.out.println("hello");
+
+        String win;
+        if (winner == TileSet.BLACK) {
+            win = "Player 1";
+        } else {
+            win = "Player 2";
+        }
+
+        StdDraw.text(midWidth, midHeight + 2, win + "  wins!");
+
+        StdDraw.show();
     }
 }

@@ -1,4 +1,5 @@
 public class TileSet {
+//board
 
     public static final Tile BOARD = new Tile("/boardimages/normalboard.png");
     public static final Tile DOTBOARD = new Tile("/boardimages/dotbox.png");
@@ -13,7 +14,7 @@ public class TileSet {
     public static final Tile TRCORNER = new Tile( "/boardimages/toprightboard.png");
     public static final Tile BRCORNER = new Tile("/boardimages/bottomrightboard.png");
 
-
+//pieces
 
     public static final Tile WHITE = new Tile("/boardimages/white.png");
     public static final Tile BLACK = new Tile("/boardimages/black.png");

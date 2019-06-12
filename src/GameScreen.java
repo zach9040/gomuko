@@ -36,7 +36,11 @@ public class GameScreen {
         StdDraw.text(midWidth, height - 2, "Gomoku is a game that utilizes the Go Board.");
         StdDraw.text(midWidth, height - 4, "The aim of the game is to get five in a row.");
 
-        StdDraw.text(midWidth, midHeight, "Good Luck!");
+        StdDraw.text(midWidth, midHeight - 2, "The position of the piece can be controlled by");
+        StdDraw.text(midWidth, midHeight - 4, "WASD or mouseclicks.");
+        StdDraw.text(midWidth, midHeight - 8, "Press J to confirm the move.");
+
+        StdDraw.text(midWidth, 2, "Good Luck!");
         StdDraw.show();
         //explain how game works
     }
@@ -45,7 +49,12 @@ public class GameScreen {
     public void creditScreen() {
         StdDraw.clear(Color.WHITE);
 
-        StdDraw.text(midWidth, height - 2, "Gomoku is a game.");
+        StdDraw.text(midWidth, height - 2, "Gomoku is a game that I used to ");
+        StdDraw.text(midWidth, height - 4, "really enjoy as a kid, playing");
+        StdDraw.text(midWidth, height - 6, "with family members in China, so I ");
+        StdDraw.text(midWidth, height - 8, "decided to create a recreation of it using");
+        StdDraw.text(midWidth, height - 10, "Java's StdDraw to create a engine based ");
+        StdDraw.text(midWidth, height - 12, "on image tiles to form a board.");
         StdDraw.show();
         //say why i made it
     }

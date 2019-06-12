@@ -1,10 +1,4 @@
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import edu.princeton.cs.introcs.StdDraw;
-import groovy.lang.MetaClassImpl;
-
 import static java.lang.StrictMath.floor;
 
 public class Play {
@@ -66,6 +60,11 @@ public class Play {
             } else {
                 player = new int[] {player2[0], player2[1]};
             }
+            if (StdDraw.isMousePressed()) {
+                int x = (int) floor(StdDraw.mouseX()) - player[0];
+                int y = (int) floor(StdDraw.mouseY()) - player[1];
+                move(x, y, board);
+            }
             char move = input.getNextKey();
             switch (move) {
                 case 'W' :
@@ -104,12 +103,14 @@ public class Play {
         int x = player[0];
         int y = player[1];
         try {
-            board[x + xMove][y + yMove] = getPlayerColor(true);
-            board[x][y] = copy[x][y];
-            if (currentPlayer % 2 == 0) {
-                player1 = new int[] {x + xMove, y + yMove};
-            } else {
-                player2 = new int[] {x + xMove, y + yMove};
+            if (xMove != 0 || yMove != 0) {
+                board[x + xMove][y + yMove] = getPlayerColor(true);
+                board[x][y] = copy[x][y];
+                if (currentPlayer % 2 == 0) {
+                    player1 = new int[] {x + xMove, y + yMove};
+                } else {
+                    player2 = new int[] {x + xMove, y + yMove};
+                }
             }
         } catch (IndexOutOfBoundsException i) {
             System.out.println("Invalid Move");

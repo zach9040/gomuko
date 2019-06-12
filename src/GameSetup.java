@@ -1,8 +1,7 @@
 import java.awt.*;
-import edu.princeton.cs.introcs.StdDraw;
 
 public class GameSetup {
-    private static final int WIDTH = 62;
+    private static final int WIDTH = 42;
     private static final int HEIGHT = 42;
 
     public static void boardSetup(Tile[][] goBoard) { //board creation with images
@@ -35,7 +34,6 @@ public class GameSetup {
 
 
     public static void displaySetup() {
-        StdDraw.clear(Color.RED);
         StdDraw.setPenColor(Color.BLACK);
         StdDraw.text(WIDTH - 10, HEIGHT - 10, "Player 1");
         StdDraw.setPenColor(Color.WHITE);

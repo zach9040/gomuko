@@ -1,5 +1,3 @@
-import edu.princeton.cs.introcs.StdDraw;
-
 import java.awt.*;
 
 public class GameScreen {
@@ -58,7 +56,6 @@ public class GameScreen {
 
     public void winnerScreen(Tile winner) {
         StdDraw.clear(Color.WHITE);
-        System.out.println("hello");
 
         String win;
         if (winner == TileSet.BLACK) {
@@ -68,7 +65,8 @@ public class GameScreen {
         }
 
         StdDraw.text(midWidth, midHeight + 2, win + "  wins!");
-
+        StdDraw.text(midWidth, midHeight - 4, "Press R to Replay");
+        StdDraw.text(midWidth, midHeight - 6, "Press Q to Quit");
         StdDraw.show();
     }
 }

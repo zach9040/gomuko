@@ -13,6 +13,12 @@ public class CheckBoard { // used to contain wincheck
                 if (board[i][j] == Player) {
                     if (board[i + 1][j] == Player && board[i + 2][j] == Player
                     && board[i + 3][j] == Player && board[i + 4][j] == Player) {
+                        try { //check if more than 5
+                            if (board[i - 1][j] == Player || board[i + 5][j] == Player) {
+                                return false;
+                            }
+                        } catch (IndexOutOfBoundsException e) {
+                        }
                         return true;
                     }
                 }
@@ -27,6 +33,12 @@ public class CheckBoard { // used to contain wincheck
                 if (board[i][j] == Player) {
                     if (board[i][j + 1] == Player && board[i][j + 2] == Player
                             && board[i][j + 3] == Player && board[i][j + 4] == Player) {
+                        try { //check if more than 5
+                            if (board[i][j - 1] == Player || board[i][j + 5] == Player) {
+                                return false;
+                            }
+                        } catch (IndexOutOfBoundsException e) {
+                        }
                         return true;
                     }
                 }
@@ -42,6 +54,12 @@ public class CheckBoard { // used to contain wincheck
                 if (board[i][j] == Player) {
                     if (board[i + 1][j + 1] == Player && board[i + 2][j + 2] == Player
                             && board[i + 3][j + 3] == Player && board[i + 4][j + 4] == Player) {
+                        try { //check if more than 5
+                            if (board[i - 1][j - 1] == Player || board[i + 5][j + 5] == Player) {
+                                return false;
+                            }
+                        } catch (IndexOutOfBoundsException e) {
+                        }
                         return true;
                     }
                 }
@@ -53,6 +71,12 @@ public class CheckBoard { // used to contain wincheck
                 if (board[i][j] == Player) {
                     if (board[i + 1][j - 1] == Player && board[i + 2][j - 2] == Player
                             && board[i + 3][j - 3] == Player && board[i + 4][j - 4] == Player) {
+                        try { //check if more than 5
+                            if (board[i - 1][j + 1] == Player || board[i + 5][j - 5] == Player) {
+                                return false;
+                            }
+                        } catch (IndexOutOfBoundsException e) {
+                        }
                         return true;
                     }
                 }

@@ -72,7 +72,7 @@ public class Play {
             if (StdDraw.isMousePressed()) {
                 int x = (int) floor(StdDraw.mouseX()) - player[0];
                 int y = (int) floor(StdDraw.mouseY()) - player[1];
-                move(x, y, board);
+                move(x, y);
             }
             char move = input.getNextKey();
             switch (move) {

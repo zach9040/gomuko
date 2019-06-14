@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e487cf88-599b-47c4-9693-b9b5f599efbd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/History.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/CheckBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/CheckBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/Play.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/Play.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/gomuko/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/TileRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/TileRenderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gomuko/TileSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gomuko/TileSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CheckBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CheckBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Play.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Play.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="842">
-              <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
+            <state relative-caret-position="340">
+              <caret line="225" column="139" selection-start-line="225" selection-start-column="139" selection-end-line="225" selection-end-column="139" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,15 +39,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/History.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+            <state relative-caret-position="840">
+              <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
               <folding>
                 <element signature="e#267#268#0" expanded="true" />
                 <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1697#1698#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -195,13 +180,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560493245052" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560545510373" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -262,18 +246,19 @@
       <workItem from="1559934246851" duration="15983000" />
       <workItem from="1560196748364" duration="8389000" />
       <workItem from="1560282175644" duration="1850000" />
-      <workItem from="1560486506729" duration="5119000" />
+      <workItem from="1560486506729" duration="5575000" />
+      <workItem from="1560545276088" duration="316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33678000" />
+    <option name="totallyTimeSpent" value="34450000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="832" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -370,6 +355,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/History.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding>
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CheckBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/InputSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -394,35 +397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TileSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CheckBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/History.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding>
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/KeyboardInputSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -430,10 +404,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TileSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Play.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
+        <state relative-caret-position="340">
+          <caret line="225" column="139" selection-start-line="225" selection-start-column="139" selection-end-line="225" selection-end-column="139" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -9,10 +9,12 @@ public class Play {
     private static History p2History;
     private static int currentPlayer = 0;
     private static boolean winCondition = false;
+    private static Tile[][] board;
     private static Tile[][] copy;
     private static Tile[][] base;
     private static boolean quit;
     static TileRenderer renderer;
+    static GameScreen game;
 
     private static void changePlayers() {
         currentPlayer = (currentPlayer + 1) % 2;
@@ -58,7 +60,7 @@ public class Play {
     }
 
 
-    public static void playGame(InputSource input, TileRenderer renderer, Tile[][] board) {
+    public static void playGame(InputSource input) {
         board[10][10] = getPlayerColor(true);
         int[] player;
         loop : while (true) {
@@ -160,7 +162,10 @@ public class Play {
         }
     }
 
-    public static void setScreens(InputSource input, GameScreen game) {
+    public static void setScreens(InputSource input) {
+        game = new GameScreen();
+        game.initialize();
+        game.startScreen();
         loop : while (input.possibleNextInput()) {
             char start = input.getNextKey();
             switch (start) {
@@ -181,14 +186,17 @@ public class Play {
         }
     }
 
-    private static void resetGame(Tile[][] board) {
+    private static void resetGame() {
         player1 = new int[] {10, 10};
         player2 = new int[] {10, 10};
         currentPlayer = 0; //set first player to black
         winCondition = false;
+        board = GameSetup.playGame();
         copy = Tile.copy(board);
         base = Tile.copy(board);
         renderer = new TileRenderer();
+        renderer.initialize(21, 21);
+        renderer.renderFrame(board);
         p1History = new History(true);
         p2History = new History(false);
         p1History.addMove(player1);
@@ -197,21 +205,11 @@ public class Play {
     }
 
     public static void play(InputSource input) {
-        GameScreen game = new GameScreen();
-        game.initialize();
-        game.startScreen();
-
-        setScreens(input, game); // intro screens
-
-        Tile[][] board = GameSetup.playGame();
-        resetGame(board);
-
-        renderer.initialize(21, 21);
-        renderer.renderFrame(board);
+        setScreens(input); // intro screens
+        resetGame();
 
         while (!winCondition && !quit) {
-            //GameSetup.displaySetup();
-            playGame(input, renderer, board);
+            playGame(input);
             winCondition = CheckBoard.winCheck(getPlayerColor(false), copy);
             if (winCondition) {
                 System.out.println("Game Over");
@@ -225,7 +223,7 @@ public class Play {
 
 
     public static void main(String[] args) {
-        InputSource input = new KeyboardInputSource();
+        InputSource input = new KeyboardInputSource(); // I wanted to mess around with entering Strings, so I had the inputsource set here.
         play(input);
         checkReplay : while (input.possibleNextInput()) {
             char replay = input.getNextKey();

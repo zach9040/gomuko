@@ -77,16 +77,16 @@ public class Play {
             char move = input.getNextKey();
             switch (move) {
                 case 'W' :
-                    move(0, 1, board);
+                    move(0, 1);
                     break;
                 case 'A' :
-                    move(-1, 0, board);
+                    move(-1, 0);
                     break;
                 case 'S' :
-                    move(0, -1, board);
+                    move(0, -1);
                     break;
                 case 'D' :
-                    move(1, 0, board);
+                    move(1, 0);
                     break;
                 case 'U': //undo
                     int[] lastMove;
@@ -143,7 +143,7 @@ public class Play {
         renderer.renderFrame(board);
     }
 
-    private static void move(int xMove, int yMove, Tile[][] board) {
+    private static void move(int xMove, int yMove) {
         int[] player = getCurrentPlayer();
         int x = player[0];
         int y = player[1];
